@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_pet
+      author: Sten
+      changes:
+        - createTable:
+            tableName: PET
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+              - column:
+                  name: pet_type
+                  type: varchar
+              - column:
+                  name: fur_color
+                  type: varchar
+              - column:
+                  name: country
+                  type: varchar
+              - column:
+                  name: image_url
+                  type: varchar
+              - column:
+                  name: author
+                  type: varchar

@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_users
+      author: Sten
+      changes:
+        - createTable:
+            tableName: USERS
+            columns:
+              - column:
+                  name: username
+                  type: varchar
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar

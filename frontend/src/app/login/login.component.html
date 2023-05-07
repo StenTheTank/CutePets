@@ -1,0 +1,47 @@
+<div class="outer">
+  <div class="container">
+  <div class="row">
+    <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+      <div class="panel-heading">
+        <h3 class="pt-3 font-weight-bold">Login</h3>
+      </div>
+      <div class="bg-image">
+        <img src="assets/images/animal.png" class="img-fluid" alt="Cute cat pic">
+      </div>
+      <div class="panel-body p-3">
+        <form>
+          <div class="form-group pt-3">
+            <div class="input-field">
+              <span class="fa fa-user p-0"></span>
+              <input type="text" name="uname" class="form-control" placeholder="Username" [(ngModel)]="username" required />
+            </div>
+          </div>
+          <div class="form-group pt-3">
+            <div class="input-field">
+                <span class="fa fa-lock p-0"></span>
+                <input type="password" name="pword" class="form-control" placeholder="Password" [(ngModel)]="password" required />
+              </div>
+            </div>
+          <div class="alert alert-danger" role="alert" *ngIf="errorMsg">{{ errorMsg }}</div>
+          <div class="btn-container">
+            <button type="submit" class="btn btn-dark btn-block mt-4 w-100" (click)="login()">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card border-info mb-3">
+      <div class="card-body">
+        <p class="fw-bold">Cute Pets is a testAssignment I made for Wisercat. It is a table of pets.
+          To see your pets you must log in.
+          Currently there are 3 accounts and they each have a pet already in the table:
+        </p>
+        <ul class="list-group">
+          <li class="list-group-item fw-semibold">Username: Bojack Password: Horseman</li>
+          <li class="list-group-item fw-semibold">Username: Mister Password: Peanutbutter</li>
+          <li class="list-group-item fw-semibold">Username: Todd Password: Chavez</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

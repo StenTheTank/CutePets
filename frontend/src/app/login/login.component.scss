@@ -1,0 +1,27 @@
+.outer{
+  height: 100vh;
+  background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%);
+}
+.panel-heading{
+  text-align: center;
+}
+.btn{
+  margin-top: 20px;
+  border-radius: 15px;
+}
+.input-field{
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #dddd;
+  color: #be4747;
+}
+.bg-image {
+  height: 1px;
+  padding-bottom: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
