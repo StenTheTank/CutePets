@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -82,12 +83,27 @@ public class PetController {
     public byte[] getPetImage(@PathVariable("filename")String filename) throws IOException {
         return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "/Desktop/wisercat/" + filename));
     }*/
-
+/*
     @GetMapping(path = "/image/{filename}", produces = IMAGE_PNG_VALUE)
     public byte[] getPetImage(@PathVariable("filename") String filename) throws URISyntaxException, IOException {
         URL resourceUrl = getClass().getResource("/animals/" + filename);
         Path filePath = Paths.get(resourceUrl.toURI());
+        System.out.println(filePath);
         return Files.readAllBytes(filePath);
+    }*/
+
+    /*
+    @GetMapping(path = "/image/{filename}", produces = IMAGE_PNG_VALUE)
+    public byte[] getPetImage(@PathVariable("filename") String filename) throws URISyntaxException, IOException {
+        String basePath = "/animals/";
+        Path filePath = Paths.get(basePath, filename);
+        System.out.println(filePath);
+        return Files.readAllBytes(filePath);
+    }*/
+    @GetMapping(path = "/image/{filename}", produces = IMAGE_PNG_VALUE)
+    public byte[] getPetImage(@PathVariable("filename") String filename) throws IOException {
+        InputStream inputStream = getClass().getResourceAsStream("/animals/" + filename);
+        return inputStream.readAllBytes();
     }
 }
 
